@@ -128,7 +128,7 @@ def trainItersae(encoder, tdecoder, lang, data, n_iters, print_every=1000, plot_
 
     for iter in range(1, n_iters + 1):
         training_sen = training_sens[iter - 1]
-        input_tensor = tensorFromSentence(lang, training_sen)
+        input_tensor = training_sen
 
         loss = trainAE(input_tensor, encoder, tdecoder,
                        encoder_optimizer, decoder_optimizer, criterion)
